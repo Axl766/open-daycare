@@ -9024,3 +9024,9 @@ https://nextjs.org/docs/messages/module-not-found
 ✓ Compiled in 65ms
 ✓ Compiled in 55ms
 ✓ Compiled in 85ms
+ GET / 200 in 34ms (next.js: 12ms, application-code: 22ms)
+ GET / 200 in 46ms (next.js: 4ms, application-code: 42ms)
+ GET / 200 in 36ms (next.js: 5ms, application-code: 32ms)
+ GET / 200 in 96ms (next.js: 10ms, application-code: 86ms)
+ GET / 200 in 87ms (next.js: 12ms, application-code: 74ms)
+ GET / 200 in 48ms (next.js: 6ms, application-code: 42ms)

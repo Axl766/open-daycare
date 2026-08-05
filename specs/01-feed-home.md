@@ -1,6 +1,6 @@
 # SPEC 01 — Página de inicio: Feed
 
-**State:** Approved
+**State:** Implemented
 **Depends on:** (ninguna)
 **Date:** 2026-08-05
 **Objective:** Implementar la plantilla `references/pantallas/feed.dc.html` como página de inicio (`/`) replicando su estilo de forma pixel-perfect en escritorio y agregando un layout responsive con drawer para mobile, sin autenticación ni base de datos.
