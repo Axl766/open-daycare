@@ -100,20 +100,20 @@ Colores de tipo → badge (UI labels en mayúsculas):
 
 ## Criterios de aceptación
 
-- [ ] Al abrir `/` se ve el feed del mockup, con sidebar desktop en ≥768px y drawer hamburguesa en <768px.
-- [ ] El drawer se abre/cierra y superpone el contenido con overlay.
-- [ ] Fuentes: los titulares usan Fredoka y el cuerpo Nunito (no Geist).
-- [ ] Paleta: `#F6ECDF` de fondo, tarjetas `#FFFDF9`, bordes `#ECE0D0`, acento `#D9583C`, idénticos al mockup.
-- [ ] Sidebar: logo "OpenDayCare · Sala Soles", botón "Nueva publicación", nav con Feed activo y 3 items inactivos, usuario "Caro Giménez" con logout decorativo.
-- [ ] Saludo: "GUARDERÍA · SALA SOLES", "Buenas, Caro", "12 niños · martes 17 jun".
-- [ ] Composer "Compartí un momento…" con avatar "C", placeholder e ícono cámara; visible desktop y mobile.
-- [ ] Lista de 3 PostCards en el orden: LOGRO (Mateo, orinal, 3 hearts/1 comment), ACTIVIDAD (Mateo, témperas, placeholder foto, 5 hearts/2 comments), ANUNCIO (Anuncio general, parque, 8 hearts/0 comments).
-- [ ] Cada PostCard muestra avatar, nombre (Fredoka), "HH:MM · publicado por vos", badge con color correcto, "Para: …", texto, footer con hearts svg y número, comentarios link y "Editar" link.
-- [ ] Todos los links (nav, botón Nueva publicación, composer, comentarios, Editar, logout) son `#` no-funcionales.
-- [ ] No hay código de autenticación, rutas API, ni conexión a base de datos.
-- [ ] `pnpm lint` pasa sin errores.
-- [ ] `pnpm exec tsc --noEmit` pasa sin errores.
-- [ ] No se editan `references/pantallas/feed.dc.html` ni su `support.js`.
+- [x] Al abrir `/` se ve el feed del mockup, con sidebar desktop en ≥768px y drawer hamburguesa en <768px.
+- [x] El drawer se abre/cierra y superpone el contenido con overlay.
+- [x] Fuentes: los titulares usan Fredoka y el cuerpo Nunito (no Geist).
+- [x] Paleta: `#F6ECDF` de fondo, tarjetas `#FFFDF9`, bordes `#ECE0D0`, acento `#D9583C`, idénticos al mockup.
+- [x] Sidebar: logo "OpenDayCare · Sala Soles", botón "Nueva publicación", nav con Feed activo y 3 items inactivos, usuario "Caro Giménez" con logout decorativo.
+- [x] Saludo: "GUARDERÍA · SALA SOLES", "Buenas, Caro", "12 niños · martes 17 jun".
+- [x] Composer "Compartí un momento…" con avatar "C", placeholder e ícono cámara; visible desktop y mobile.
+- [x] Lista de 3 PostCards en el orden: LOGRO (Mateo, orinal, 3 hearts/1 comment), ACTIVIDAD (Mateo, témperas, placeholder foto, 5 hearts/2 comments), ANUNCIO (Anuncio general, parque, 8 hearts/0 comments).
+- [x] Cada PostCard muestra avatar, nombre (Fredoka), "HH:MM · publicado por vos", badge con color correcto, "Para: …", texto, footer con hearts svg y número, comentarios link y "Editar" link.
+- [x] Todos los links (nav, botón Nueva publicación, composer, comentarios, Editar, logout) son `#` no-funcionales.
+- [x] No hay código de autenticación, rutas API, ni conexión a base de datos.
+- [x] `pnpm lint` pasa sin errores.
+- [x] `pnpm exec tsc --noEmit` pasa sin errores.
+- [x] No se editan `references/pantallas/feed.dc.html` ni su `support.js`.
 
 ## Decisiones tomadas y descartadas
 
