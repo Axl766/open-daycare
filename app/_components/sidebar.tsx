@@ -1,19 +1,24 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 
 type NavItem = {
   label: string;
   href: string;
-  active?: boolean;
   icon: ReactNode;
 };
+
+function isActive(href: string, pathname: string): boolean {
+  if (href === "#") return false;
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+}
 
 const navItems: NavItem[] = [
   {
     label: "Feed",
-    href: "#",
-    active: true,
+    href: "/",
     icon: (
       <svg
         width="19"
@@ -31,7 +36,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Niños",
-    href: "#",
+    href: "/kids",
     icon: (
       <svg
         width="19"
@@ -154,22 +159,27 @@ function NewPostButton() {
 }
 
 function NavList() {
+  const pathname = usePathname();
+
   return (
     <nav className="flex flex-1 flex-col gap-1">
-      {navItems.map((item) => (
-        <a
-          key={item.label}
-          href={item.href}
-          className={
-            item.active
-              ? "flex items-center gap-3 rounded-[12px] bg-active-bg px-3 py-[11px] text-[14.5px] font-extrabold text-active-text"
-              : "flex items-center gap-3 rounded-[12px] px-3 py-[11px] text-[14.5px] font-semibold text-text-muted"
-          }
-        >
-          {item.icon}
-          {item.label}
-        </a>
-      ))}
+      {navItems.map((item) => {
+        const active = isActive(item.href, pathname);
+        return (
+          <a
+            key={item.label}
+            href={item.href}
+            className={
+              active
+                ? "flex items-center gap-3 rounded-[12px] bg-active-bg px-3 py-[11px] text-[14.5px] font-extrabold text-active-text"
+                : "flex items-center gap-3 rounded-[12px] px-3 py-[11px] text-[14.5px] font-semibold text-text-muted"
+            }
+          >
+            {item.icon}
+            {item.label}
+          </a>
+        );
+      })}
     </nav>
   );
 }
