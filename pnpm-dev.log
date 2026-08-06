@@ -9038,7 +9038,7 @@ https://nextjs.org/docs/messages/module-not-found
 ✓ Compiled in 114ms
  GET / 200 in 52ms (next.js: 13ms, application-code: 39ms)
  GET / 200 in 38ms (next.js: 5ms, application-code: 33ms)
-✓ Compiled in 148ms
+ ✓ Compiled in 148ms
  GET / 200 in 28ms (next.js: 10ms, application-code: 18ms)
  GET / 200 in 34ms (next.js: 9ms, application-code: 25ms)
  GET / 200 in 27ms (next.js: 10ms, application-code: 17ms)

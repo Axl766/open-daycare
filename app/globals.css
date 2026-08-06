@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: #f6ecdf;
+  --color-card: #fffdf9;
+  --color-card-border: #ece0d0;
+  --color-card-border-soft: #f0e6d8;
+  --color-divider: #e7dac8;
+  --color-dashed-photo: #dbcdba;
+  --color-photo-fill: #f4ece1;
+  --color-photo-muted: #b0a290;
+
+  --color-accent: #d9583c;
+  --color-accent-strong: #ee8164;
+  --color-accent-soft: #f4977e;
+  --color-accent-tint: #fbe3d8;
+  --color-accent-deep: #c5503a;
+  --color-accent-coral: #f2937a;
+  --color-accent-coral-soft: #f8c3a8;
+  --color-heart: #e0654a;
+
+  --color-text-strong: #3f362e;
+  --color-text-body: #4a4038;
+  --color-text-muted: #6e6359;
+  --color-text-faint: #94887b;
+  --color-text-quiet: #a89a8b;
+
+  --color-active-bg: #fbe3d8;
+  --color-active-text: #d9583c;
+
+  --color-achievement-bg: #cfebd8;
+  --color-achievement-dot: #3e9b6c;
+  --color-activity-bg: #c7e7f1;
+  --color-activity-dot: #2e89a6;
+  --color-announcement-bg: #ccd8f4;
+  --color-announcement-dot: #4e72c8;
+
+  --color-avatar-mateo-bg: #a9d9e8;
+  --color-avatar-mateo-fg: #1f7a93;
+  --color-avatar-me-bg: #f2937a;
+  --color-avatar-me-fg: #ffffff;
+  --color-avatar-announcement-bg: #ccd8f4;
+  --color-avatar-announcement-fg: #4e72c8;
+
+  --font-fredoka: var(--font-fredoka-variable);
+  --font-sans: var(--font-nunito-variable);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-text-strong);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e4d6c4;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
 }
