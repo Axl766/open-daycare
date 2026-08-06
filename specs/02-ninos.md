@@ -121,33 +121,33 @@ Padres de Mateo (perfil): Lucía Fernández (mamá · activa, badge `ACTIVA` `#C
 
 ## Criterios de aceptación
 
-- [ ] Al abrir `/kids` se ve el listado del mockup, con sidebar desktop en ≥768px y drawer hamburguesa en <768px.
-- [ ] El sidebar marca "Niños" como activo (`#FBE3D8`/`#D9583C`) y "Feed" como inactivo.
-- [ ] El drawer se abre/cierra y superpone el contenido con overlay (mismo comportamiento que spec 01).
-- [ ] Cabecera del listado: badge "GESTIÓN", título "Niños" (Fredoka), botón "Agregar niño" (gradiente naranja, link `#`).
-- [ ] Buscador "Buscar niño…" visible, con ícono lupa y placeholder; no filtra.
-- [ ] Divider "SALA SOLES · 8 niños" visible sobre el grid.
-- [ ] El listado muestra 8 tarjetas en grid de 2 columnas, en el orden del mockup: Mateo, Sofía, Benjamín, Valentina, Tomás, Emma, Lucas, Olivia.
-- [ ] Cada tarjeta muestra avatar con color correcto, nombre en Fredoka, "X años · N padres vinculados" y badge o flecha según corresponda.
-- [ ] Badges: Mateo=MANÍ (`#FBD8CC`/`#D9684A`), Tomás=LACTOSA (mismo color), Valentina=VINCULAR (`#F9D2DE`/`#C56486`); el resto muestra flecha `›`.
-- [ ] Click en una tarjeta navega a `/kids/[slug-del-nombre]`.
-- [ ] Al abrir `/kids/mateo-fernandez` se ve el perfil de Mateo completo: back link "Volver a Niños", avatar "M" (84px) con color `#A9D9E8`/`#1F7A93`, "Mateo Fernández" (Fredoka 28), "3 años · Sala Soles", botón "Editar" `#`.
-- [ ] Panel de alergias con background `#FBDAD6`, título "Alergias y notas" y texto del mockup.
-- [ ] Ficha de datos con filas: "Fecha de nacimiento · 12 mar 2022", "Sala · Soles", "Ingreso · feb 2025".
-- [ ] Botón "Resumen del día" (background `#3F362E`, link `#`).
-- [ ] Panel "PADRES VINCULADOS" con Lucía (avatar L `#C9B6E8`, "Mamá · activa", badge ACTIVA `#CFEBD8`/`#3E9B6C`) y Diego (avatar D `#A9C7E8`, "Papá · invitación enviada", badge PENDIENTE `#F7E7A6`/`#9A7B1E`).
-- [ ] Link "Vincular otro padre" con avatar dashed + icon +, color `#C5503A`, link `#`.
-- [ ] Al abrir `/kids/no-existe` se muestra un estado vacío inline (mensaje "Niño no encontrado" y link de vuelta a `/kids`).
-- [ ] Todos los links no-implementados (`Agregar niño`, `Editar`, `Resumen del día`, `Vincular otro padre`, `Nueva publicación`, nav items `Avisos`/`Mi cuenta`, `logout`) son `#` o rutas internas válidas (`/kids`, `/`).
-- [ ] No hay código de autenticación, rutas API ni conexión a base de datos.
-- [ ] Fuentes: titulares en Fredoka, cuerpo en Nunito (heredado de spec 01).
-- [ ] Paleta idéntica al mockup (fondo `#F6ECDF`, tarjetas `#FFFDF9`, bordes `#ECE0D0`, acento `#D9583C`).
-- [ ] `pnpm lint` pasa sin errores.
-- [ ] `pnpm exec tsc --noEmit` pasa sin errores.
-- [ ] No se editan `references/pantallas/ninos.dc.html`, `references/pantallas/perfil-nino.dc.html` ni su `support.js`.
-- [ ] La ruta `/` (feed) sigue funcionando exactamente como en spec 01 tras el refactor del route group.
-- [ ] El sidebar muestra "Feed" activo al abrir `/` y "Niños" activo al abrir `/kids`.
-- [ ] El estado del drawer (abierto/cerrado) persiste al navegar entre `/` y `/kids` (no se re-monta el Sidebar).
+- [x] Al abrir `/kids` se ve el listado del mockup, con sidebar desktop en ≥768px y drawer hamburguesa en <768px.
+- [x] El sidebar marca "Niños" como activo (`#FBE3D8`/`#D9583C`) y "Feed" como inactivo.
+- [x] El drawer se abre/cierra y superpone el contenido con overlay (mismo comportamiento que spec 01).
+- [x] Cabecera del listado: badge "GESTIÓN", título "Niños" (Fredoka), botón "Agregar niño" (gradiente naranja, link `#`).
+- [x] Buscador "Buscar niño…" visible, con ícono lupa y placeholder; no filtra.
+- [x] Divider "SALA SOLES · 8 niños" visible sobre el grid.
+- [x] El listado muestra 8 tarjetas en grid de 2 columnas, en el orden del mockup: Mateo, Sofía, Benjamín, Valentina, Tomás, Emma, Lucas, Olivia.
+- [x] Cada tarjeta muestra avatar con color correcto, nombre en Fredoka, "X años · N padres vinculados" y badge o flecha según corresponda.
+- [x] Badges: Mateo=MANÍ (`#FBD8CC`/`#D9684A`), Tomás=LACTOSA (mismo color), Valentina=VINCULAR (`#F9D2DE`/`#C56486`); el resto muestra flecha `›`.
+- [x] Click en una tarjeta navega a `/kids/[slug-del-nombre]`.
+- [x] Al abrir `/kids/mateo-fernandez` se ve el perfil de Mateo completo: back link "Volver a Niños", avatar "M" (84px) con color `#A9D9E8`/`#1F7A93`, "Mateo Fernández" (Fredoka 28), "3 años · Sala Soles", botón "Editar" `#`.
+- [x] Panel de alergias con background `#FBDAD6`, título "Alergias y notas" y texto del mockup.
+- [x] Ficha de datos con filas: "Fecha de nacimiento · 12 mar 2022", "Sala · Soles", "Ingreso · feb 2025".
+- [x] Botón "Resumen del día" (background `#3F362E`, link `#`).
+- [x] Panel "PADRES VINCULADOS" con Lucía (avatar L `#C9B6E8`, "Mamá · activa", badge ACTIVA `#CFEBD8`/`#3E9B6C`) y Diego (avatar D `#A9C7E8`, "Papá · invitación enviada", badge PENDIENTE `#F7E7A6`/`#9A7B1E`).
+- [x] Link "Vincular otro padre" con avatar dashed + icon +, color `#C5503A`, link `#`.
+- [x] Al abrir `/kids/no-existe` se muestra un estado vacío inline (mensaje "Niño no encontrado" y link de vuelta a `/kids`).
+- [x] Todos los links no-implementados (`Agregar niño`, `Editar`, `Resumen del día`, `Vincular otro padre`, `Nueva publicación`, nav items `Avisos`/`Mi cuenta`, `logout`) son `#` o rutas internas válidas (`/kids`, `/`).
+- [x] No hay código de autenticación, rutas API ni conexión a base de datos.
+- [x] Fuentes: titulares en Fredoka, cuerpo en Nunito (heredado de spec 01).
+- [x] Paleta idéntica al mockup (fondo `#F6ECDF`, tarjetas `#FFFDF9`, bordes `#ECE0D0`, acento `#D9583C`).
+- [x] `pnpm lint` pasa sin errores.
+- [x] `pnpm exec tsc --noEmit` pasa sin errores.
+- [x] No se editan `references/pantallas/ninos.dc.html`, `references/pantallas/perfil-nino.dc.html` ni su `support.js`.
+- [x] La ruta `/` (feed) sigue funcionando exactamente como en spec 01 tras el refactor del route group.
+- [x] El sidebar muestra "Feed" activo al abrir `/` y "Niños" activo al abrir `/kids`.
+- [x] El estado del drawer (abierto/cerrado) persiste al navegar entre `/` y `/kids` (no se re-monta el Sidebar).
 
 ## Decisiones tomadas y descartadas
 

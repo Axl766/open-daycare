@@ -117,7 +117,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           </div>
         </div>
 
-        <div className="w-[300px] flex-none flex-col gap-[14px]">
+        <div className="flex w-[300px] flex-none flex-col gap-[14px]">
           <a
             href="#"
             className="flex w-full items-center justify-center gap-[9px] rounded-[14px] bg-text-strong px-[18px] py-[13px] text-[15px] font-extrabold text-white"
