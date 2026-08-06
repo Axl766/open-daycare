@@ -265,7 +265,7 @@ export function SidebarDrawer() {
             tabIndex={-1}
             aria-label="Cerrar menú"
             onClick={close}
-            className="fixed inset-0 z-40 bg-black/30"
+            className="fixed top-0 right-0 bottom-0 left-[248px] z-40 bg-black/30"
           />
           <aside className="fixed left-0 top-0 z-50 flex h-screen w-[248px] flex-col bg-card px-4 py-6">
             <SidebarContent />

@@ -70,7 +70,7 @@ export const FEED_POSTS: readonly FeedPost[] = [
     publishedBySelfHint: "publicado por vos",
     type: "achievement",
     audience: { kind: "family", childName: "Mateo" },
-    body: "¡Usó el orinal solita por primera vez! Estaba feliz de contárselo a todos. Un gran paso.",
+    body: "¡Usó el orinal solito por primera vez! Estaba feliz de contárselo a todos. Un gran paso.",
     hearts: 3,
     comments: 1,
   },
