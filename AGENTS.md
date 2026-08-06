@@ -17,6 +17,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - /spec Usaremos esta habilidad para crear las especificaciones
 - /spec-impl Usaremos esta skill para hacer las implementaciones de las specs
+- @spec-verify Agente verificador de criterios de aceptación. Marca `[x]` en los que pasan y corrige código de los que fallan (máx. 2 intentos). Usa Playwright MCP para pantallas y Context7 para validar convenciones de Next.js 16. Invocación: `@spec-verify NN-slug` o Tab como primary. Prompt: `.opencode/agents/prompts/spec-verify.md`
 
 ## Code rules
 
