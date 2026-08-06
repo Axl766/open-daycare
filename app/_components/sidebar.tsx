@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 
@@ -95,8 +96,8 @@ const navItems: NavItem[] = [
 
 function Logo() {
   return (
-    <a
-      href="#"
+    <Link
+      href="/"
       className="flex items-center gap-[11px] px-2 pb-[22px] pt-1"
     >
       <div
@@ -127,7 +128,7 @@ function Logo() {
           Sala Soles
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -165,19 +166,22 @@ function NavList() {
     <nav className="flex flex-1 flex-col gap-1">
       {navItems.map((item) => {
         const active = isActive(item.href, pathname);
+        const className = active
+          ? "flex items-center gap-3 rounded-[12px] bg-active-bg px-3 py-[11px] text-[14.5px] font-extrabold text-active-text"
+          : "flex items-center gap-3 rounded-[12px] px-3 py-[11px] text-[14.5px] font-semibold text-text-muted";
+        if (item.href === "#") {
+          return (
+            <a key={item.label} href="#" className={className}>
+              {item.icon}
+              {item.label}
+            </a>
+          );
+        }
         return (
-          <a
-            key={item.label}
-            href={item.href}
-            className={
-              active
-                ? "flex items-center gap-3 rounded-[12px] bg-active-bg px-3 py-[11px] text-[14.5px] font-extrabold text-active-text"
-                : "flex items-center gap-3 rounded-[12px] px-3 py-[11px] text-[14.5px] font-semibold text-text-muted"
-            }
-          >
+          <Link key={item.label} href={item.href} className={className}>
             {item.icon}
             {item.label}
-          </a>
+          </Link>
         );
       })}
     </nav>
