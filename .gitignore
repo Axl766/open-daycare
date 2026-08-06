@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 .playwright-mcp/*
+
+# Windows NUL device artifact (Git Bash creates file instead of device)
+nul
