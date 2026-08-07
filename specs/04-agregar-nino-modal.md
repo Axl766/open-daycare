@@ -1,6 +1,6 @@
 # SPEC 04 — Modal "Agregar niño" sobre `/kids`
 
-**State:** Approved//spe
+**State:** Approved
 **Depends on:** SPEC 02
 **Date:** 2026-08-06
 **Objective:** Implementar el mockup `references/pantallas/agregar-nino.dc.html` como modal overlay sobre `/kids` con layout card centrado en `md+` y sheet full-screen en `< md`, dropdown de sala funcional con opciones inventadas, sin backend ni autenticación.
@@ -21,7 +21,7 @@
 **No incluye:**
 
 - Persistencia, rutas API, base de datos, sesión.
-- Validación de formularios, estados de error, "Guardado con éxito".
+- Validación inline del campo FECHA DE NACIMIENTO (formato, fecha real, no futura); sin validación de otros campos.
 - Datos reales del niño (los inputs quedan vacíos/placeholder; Guardar solo cierra el modal).
 - Integración con `KIDS` de SPEC 02 (no se añade a la lista; el botón "Guardar" no modifica los datos estáticos).
 - Otros cambios en `/kids` fuera de habilitar el botón "Agregar niño".
@@ -51,6 +51,10 @@ export interface ChildFormLabels {
 }
 
 export const CHILD_FORM_LABELS: ChildFormLabels;
+
+export const BIRTHDAY_FORMAT: "dd/mm/aaaa";
+export const INVALID_BIRTHDAY_MESSAGE: string;
+export function isValidBirthday(value: string): boolean;
 ```
 
 Valores del mockup:
@@ -78,7 +82,12 @@ No se introducen tipos de sesión, credenciales ni usuarios: es UI-only.
    - Agregar estado `open` (client wrapper o convertir la página en client component si no rompe `generateStaticParams` de `/kids/[id]`). Si convertir la page rompe `generateStaticParams`, extraer el contenido del listado a un componente server y envolverlo en un wrapper client que controle el modal.
    - Botón "Agregar niño" ahora abre el modal (`setOpen(true)`) en vez de ser `href="#"`.
    - `<ChildFormModal open={open} onClose={() => setOpen(false)} />` renderizado al final de la página.
-4. **Verificación.** `pnpm lint` y `pnpm exec tsc --noEmit` sin errores. Comparación visual con `references/pantallas/agregar-nino.dc.html`. Confirmar que `/kids/[id]` sigue funcionando (no se toca `generateStaticParams`).
+4. **Validación inline de fecha.** Editar `app/_components/child-form-modal.tsx`:
+   - Estado `birthday` + `birthdayTouched` (se resetea al cerrar porque el modal renderiza `null` cuando `open=false`).
+   - Input fecha: `value={birthday}`, `onChange` → `setBirthday`, `onBlur` → `setBirthdayTouched(true)`.
+   - Mensaje inline condicional bajo el input: `text-[13px] text-accent` con `INVALID_BIRTHDAY_MESSAGE`.
+   - Guardar/Cancelar/Escape/Backdrop: sin cambios (siguen cerrando sin validar).
+5. **Verificación.** `pnpm lint` y `pnpm exec tsc --noEmit` sin errores. Comparación visual con `references/pantallas/agregar-nino.dc.html`. Confirmar que `/kids/[id]` sigue funcionando (no se toca `generateStaticParams`).
 
 ## Criterios de aceptación
 
@@ -97,6 +106,9 @@ No se introducen tipos de sesión, credenciales ni usuarios: es UI-only.
 - [ ] `pnpm exec tsc --noEmit` pasa sin errores.
 - [ ] No se edita `references/pantallas/agregar-nino.dc.html` ni su `support.js`.
 - [ ] Las rutas de SPEC 01 (`/`) y SPEC 02 (`/kids`, `/kids/[id]`) siguen funcionando sin cambios.
+- [ ] Al ingresar `dd/mm/aaaa` inválido y salir del campo, aparece mensaje `INVALID_BIRTHDAY_MESSAGE` bajo el input, color `#D9583C`, sin ocultar el input.
+- [ ] Al ingresar fecha válida (ej. `12/03/2022`), no aparece mensaje.
+- [ ] Fecha futura (ej. `01/01/2099`) se considera inválida y muestra el mensaje.
 
 ## Decisiones tomadas y descartadas
 
@@ -104,7 +116,7 @@ No se introducen tipos de sesión, credenciales ni usuarios: es UI-only.
 - **Dropdown de sala funcional con opciones inventadas** (`Soles`, `Lunas`, `Estrellas`, default `Soles`): el mockup muestra "Soles" fijo con chevron; se añade funcionalidad visual (cambia el valor) sin persistencia. Descartado dropdown decorativo (el usuario pidió funcional).
 - **Sheet full-screen en `< md`** (decisión del usuario): en mobile el modal ocupa toda la pantalla con scroll natural. Descartada card centrada en mobile (peor UX táctil).
 - **Cierre con Escape + backdrop** (decisión del usuario): consistente con el patrón del drawer de SPEC 01. Sin focus trap (mitigación de riesgo de accesibilidad, fuera de alcance).
-- **Sin persistencia ni validación**: Guardar solo cierra el modal, no modifica `KIDS` ni guarda datos. Descartado añadir a la lista estática (rompería la inmutabilidad de SPEC 02 y requeriría estado global).
+- **Sin persistencia; validación inline solo de fecha**: Guardar solo cierra el modal, no modifica `KIDS` ni guarda datos. Descartado añadir a la lista estática (rompería la inmutabilidad de SPEC 02 y requeriría estado global). La validación inline del campo FECHA DE NACIMIENTO se añadió como amend (formato, fecha real, no futura); sin validación de otros campos.
 - **Wrapper client para `/kids`**: si convertir la page en client rompe `generateStaticParams` de `/kids/[id]`, se extrae el contenido del listado a un componente server y se envuelve en un wrapper client que controla el modal. Descartada conversión directa si rompe el prerender.
 - **Sin dark mode** en este modal (hereda tema cálido claro de SPEC 01).
 
