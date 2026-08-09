@@ -91,24 +91,24 @@ No se introducen tipos de sesión, credenciales ni usuarios: es UI-only.
 
 ## Criterios de aceptación
 
-- [ ] Click en "Agregar niño" abre el modal sin navegar ni refrescar la página.
-- [ ] Header del modal: "Cancelar" (color `#94887B`), título "Agregar niño" (Fredoka 18, `#3F362E`), "Guardar" (color `#D9583C`); todos cierran el modal sin efecto secundario.
-- [ ] Inputs: NOMBRE COMPLETO (placeholder `Ej. Martina López`), FECHA DE NACIMIENTO (`dd/mm/aaaa`), SALA (dropdown con `Soles`/`Lunas`/`Estrellas`, default `Soles`), ALERGIAS (placeholder `Ej. Maní, Lactosa`), NOTAS MÉDICAS (textarea, placeholder `Indicaciones, medicación, contactos…`).
-- [ ] Dropdown de sala: abre/cierra, seleccionar opción cambia el valor visible; no se persiste.
-- [ ] `md+` (≥768px): card centrada `max-w-[520px]`, fondo `#FBF4EC`, borde `#ECE0D0`, border-radius 24px, sombra del mockup, overlay/scrim sobre `/kids`.
-- [ ] `< md` (<768px): sheet full-screen top-aligned con padding `40px 24px`, scroll natural.
-- [ ] Cierre funcional: Escape cierra, click en backdrop (scrim) cierra, Cancelar cierra, Guardar cierra. Sin focus trap.
-- [ ] Sidebar/drawer de `/kids` sigue funcionando; el estado del modal no interfiere con el drawer.
-- [ ] `/kids/[id]` sigue funcionando sin cambios (no se toca `generateStaticParams`).
-- [ ] Fuentes: Fredoka (título del modal), Nunito (cuerpo e inputs).
-- [ ] Paleta del modal idéntica al mockup: fondo `#FBF4EC`, borde `#ECE0D0`, inputs `#EADFD0`, fondo blanco `#fff`.
-- [ ] `pnpm lint` pasa sin errores.
-- [ ] `pnpm exec tsc --noEmit` pasa sin errores.
-- [ ] No se edita `references/pantallas/agregar-nino.dc.html` ni su `support.js`.
-- [ ] Las rutas de SPEC 01 (`/`) y SPEC 02 (`/kids`, `/kids/[id]`) siguen funcionando sin cambios.
-- [ ] Al ingresar `dd/mm/aaaa` inválido y salir del campo, aparece mensaje `INVALID_BIRTHDAY_MESSAGE` bajo el input, color `#D9583C`, sin ocultar el input.
-- [ ] Al ingresar fecha válida (ej. `12/03/2022`), no aparece mensaje.
-- [ ] Fecha futura (ej. `01/01/2099`) se considera inválida y muestra el mensaje.
+- [x] Click en "Agregar niño" abre el modal sin navegar ni refrescar la página.
+- [x] Header del modal: "Cancelar" (color `#94887B`), título "Agregar niño" (Fredoka 18, `#3F362E`), "Guardar" (color `#D9583C`); todos cierran el modal sin efecto secundario.
+- [x] Inputs: NOMBRE COMPLETO (placeholder `Ej. Martina López`), FECHA DE NACIMIENTO (`dd/mm/aaaa`), SALA (dropdown con `Soles`/`Lunas`/`Estrellas`, default `Soles`), ALERGIAS (placeholder `Ej. Maní, Lactoso`), NOTAS MÉDICAS (textarea, placeholder `Indicaciones, medicación, contactos…`).
+- [x] Dropdown de sala: abre/cierra, seleccionar opción cambia el valor visible; no se persiste.
+- [x] `md+` (≥768px): card centrada `max-w-[520px]`, fondo `#FBF4EC`, borde `#ECE0D0`, border-radius 24px, sombra del mockup, overlay/scrim sobre `/kids`.
+- [x] `< md` (<768px): sheet full-screen top-aligned con padding `40px 24px`, scroll natural.
+- [x] Cierre funcional: Escape cierra, click en backdrop (scrim) cierra, Cancelar cierra, Guardar cierra. Sin focus trap.
+- [x] Sidebar/drawer de `/kids` sigue funcionando; el estado del modal no interfiere con el drawer.
+- [x] `/kids/[id]` sigue funcionando sin cambios (no se toca `generateStaticParams`).
+- [x] Fuentes: Fredoka (título del modal), Nunito (cuerpo e inputs).
+- [x] Paleta del modal idéntica al mockup: fondo `#FBF4EC`, borde `#ECE0D0`, inputs `#EADFD0`, fondo blanco `#fff`.
+- [x] `pnpm lint` pasa sin errores.
+- [x] `pnpm exec tsc --noEmit` pasa sin errores.
+- [x] No se edita `references/pantallas/agregar-nino.dc.html` ni su `support.js`.
+- [x] Las rutas de SPEC 01 (`/`) y SPEC 02 (`/kids`, `/kids/[id]`) siguen funcionando sin cambios.
+- [x] Al ingresar `dd/mm/aaaa` inválido y salir del campo, aparece mensaje `INVALID_BIRTHDAY_MESSAGE` bajo el input, color `#D9583C`, sin ocultar el input.
+- [x] Al ingresar fecha válida (ej. `12/03/2022`), no aparece mensaje.
+- [x] Fecha futura (ej. `01/01/2099`) se considera inválida y muestra el mensaje.
 
 ## Decisiones tomadas y descartadas
 
