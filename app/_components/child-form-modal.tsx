@@ -33,7 +33,7 @@ export default function ChildFormModal({ open, onClose }: ChildFormModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-6 md:items-center md:p-10"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto px-6 py-10 md:items-center md:p-10"
       onClick={onClose}
       style={{ background: "rgba(63,54,46,.45)" }}
     >
